@@ -29,7 +29,7 @@ export const CATALOG = [
 // Aplikasi hanya menerapkan entry dengan `v` yang lebih baru dari
 // yang sudah pernah dilihat user — edit/hapus manual user tidak akan
 // ditimpa oleh seed lama.
-export const SEED_VERSION = 12;
+export const SEED_VERSION = 13;
 export const SEED_ENTRIES = [
   { v: 1, id: "seed-oli-0719", type: "oli", date: "2026-07-19", km: 82206, cost: 407000, notes: "Fastron Eco SAE 5W-30 + filter oli (Pertamina). Ganti oli berikutnya di km 87.206" },
   { v: 1, id: "seed-aki-0719", type: "aki", date: "2026-07-19", km: 82296, cost: 830000, notes: "Ganti aki" },
@@ -41,5 +41,6 @@ export const SEED_ENTRIES = [
   { v: 6, id: "seed-samsat", type: "other", date: "2026-07-19", km: 82296, cost: 50000, notes: "Cek fisik tempel samsat (tgl perkiraan)" },
   { v: 11, id: "seed-consum-0805", type: "other", date: "2026-08-05", km: 83008, cost: 0, notes: "Catatan konsumsi BBM: AV 8.9 L/100km (~11.2 km/L). CUR fluktuasi 7.7-10 L/100km saat jalan (normal, tergantung kondisi)." },
   { v: 12, id: "seed-filter-0717", type: "filter", date: "2026-07-17", km: 82206, cost: 0, notes: "Ganti filter udara (km perkiraan ~82.2rb, biaya belum dicatat)" },
+  { v: 13, id: "seed-filterac-0717", type: "filterac", date: "2026-07-17", km: 82206, cost: 0, notes: "Ganti filter AC (km perkiraan ~82.2rb, biaya belum dicatat)" },
 ];
 export const SEED_CAR_KM = 83049;
