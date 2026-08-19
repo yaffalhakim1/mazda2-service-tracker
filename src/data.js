@@ -1,7 +1,7 @@
 // ---- Katalog servis: interval berbasis km + bulan ----
 // Interval dari pengalaman owner 310rb km (non-SkyActiv), bukan jadwal pabrik generik.
 export const CATALOG = [
-  { id: "oli", label: "Ganti oli mesin + filter oli", km: 7000, months: 6 },
+  { id: "oli", label: "Ganti oli mesin + filter oli", km: 5000, months: 6 },
   { id: "throttle", label: "Tune up / carbon cleaning / throttle body", km: 20000, months: null },
   { id: "filter", label: "Ganti filter udara", km: 15000, months: 12 },
   { id: "engineflush", label: "Engine flush", km: 20000, months: null },
@@ -13,12 +13,14 @@ export const CATALOG = [
   { id: "fuelfilter", label: "Ganti filter bensin / bersihkan fuel pump", km: 50000, months: null },
   { id: "radiator", label: "Kuras + servis radiator", km: 100000, months: null },
   { id: "coolant", label: "Kuras air radiator (coolant)", km: 35000, months: null },
-  { id: "olimatic", label: "Ganti oli matic", km: 35000, months: null },
+  { id: "olimatic", label: "Ganti oli matic", km: 20000, months: 24 },
   { id: "filtermatic", label: "Ganti filter oli matic", km: 100000, months: null },
-  { id: "aki", label: "Cek accu (aki)", km: null, months: 18 },
+  { id: "aki", label: "Cek accu (aki)", km: null, months: 36 },
   { id: "ac", label: "Bersihkan evap AC", km: null, months: 12 },
   { id: "racksteer", label: "Cek rack steer / kaki-kaki", km: 20000, months: 12 },
   { id: "spooring", label: "Spooring & balancing", km: 10000, months: null },
+  { id: "ban", label: "Ganti ban", km: 60000, months: 60 },
+  { id: "wiper", label: "Ganti wiper", km: null, months: 6 },
   { id: "other", label: "Lainnya", km: null, months: null },
 ];
 
@@ -29,7 +31,7 @@ export const CATALOG = [
 // Aplikasi hanya menerapkan entry dengan `v` yang lebih baru dari
 // yang sudah pernah dilihat user — edit/hapus manual user tidak akan
 // ditimpa oleh seed lama.
-export const SEED_VERSION = 13;
+export const SEED_VERSION = 14;
 export const SEED_ENTRIES = [
   { v: 1, id: "seed-oli-0719", type: "oli", date: "2026-07-19", km: 82206, cost: 407000, notes: "Fastron Eco SAE 5W-30 + filter oli (Pertamina). Ganti oli berikutnya di km 87.206" },
   { v: 1, id: "seed-aki-0719", type: "aki", date: "2026-07-19", km: 82296, cost: 830000, notes: "Ganti aki" },
