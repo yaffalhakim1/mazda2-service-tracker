@@ -1,5 +1,6 @@
 // ---- Katalog servis: interval berbasis km + bulan ----
-// Interval dari pengalaman owner 310rb km (non-SkyActiv), bukan jadwal pabrik generik.
+// Sumber: pengalaman owner 310rb km (non-SkyActiv) + rekomendasi inspektor (kakak Yafi).
+// Kombinasi: interval pabrik, real-world owner, dan standar inspeksi.
 export const CATALOG = [
   { id: "oli", label: "Ganti oli mesin + filter oli", km: 5000, months: 6 },
   { id: "throttle", label: "Tune up / carbon cleaning / throttle body", km: 20000, months: null },

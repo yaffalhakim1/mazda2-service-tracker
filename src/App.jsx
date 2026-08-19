@@ -253,6 +253,7 @@ export default function App() {
           { id: "due", label: "Pengingat" },
           { id: "add", label: "Tambah" },
           { id: "history", label: "Riwayat" },
+          { id: "notes", label: "Catatan" },
         ].map((t) => (
           <button
             key={t.id}
@@ -299,7 +300,7 @@ export default function App() {
             </div>
           ))}
           <p className="text-xs text-dim text-center pt-1">
-            Interval berdasarkan pengalaman owner 310rb km (non-SkyActiv): oli 7.000km/6bln, throttle body & flush 20rb km, busi 50rb km, oli matic 35rb km.
+            Interval: kombinasi pengalaman owner 310rb km + rekomendasi inspektor. Lihat tab "Catatan" untuk detail.
           </p>
         </div>
       )}
@@ -435,6 +436,92 @@ export default function App() {
               </div>
             );
           })}
+        </div>
+      )}
+
+      {/* NOTES TAB */}
+      {tab === "notes" && (
+        <div className="px-5 mt-4 space-y-4">
+          <div className="bg-white rounded-xl border border-line p-4">
+            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-ink mb-3">
+              📋 Jadwal Perawatan (Inspektor)
+            </h3>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold">1</span>
+                <div>
+                  <div className="font-medium">Oli mesin 5W-30 + filter oli</div>
+                  <div className="text-xs text-muted">Tiap <b>5.000 km</b> atau maks <b>6 bulan</b></div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold">2</span>
+                <div>
+                  <div className="font-medium">Filter udara</div>
+                  <div className="text-xs text-muted">Tiap <b>15.000 km</b> atau <b>1 tahun</b></div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold">3</span>
+                <div>
+                  <div className="font-medium">Oli matic</div>
+                  <div className="text-xs text-muted">Tiap <b>20.000 km</b> atau <b>2 tahun</b></div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold">4</span>
+                <div>
+                  <div className="font-medium">Accu (aki)</div>
+                  <div className="text-xs text-muted">Tiap <b>2–3 tahun</b>, rekomendasi <b>45Ah</b></div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold">5</span>
+                <div>
+                  <div className="font-medium">Ban</div>
+                  <div className="text-xs text-muted">Tiap <b>60.000 km</b> atau maks <b>5 tahun</b></div>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-accent/10 text-accent flex items-center justify-center text-xs font-bold">6</span>
+                <div>
+                  <div className="font-medium">Wiper</div>
+                  <div className="text-xs text-muted">Tiap <b>6 bulan</b> — biar ga baretin kaca</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl border border-line p-4">
+            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-ink mb-3">
+              ⛽ Tips Hemat BBM
+            </h3>
+            <ul className="space-y-2 text-sm text-muted list-disc list-inside">
+              <li><b>Tekanan ban 32–33 PSI</b> — cek seminggu sekali, kurang 5 PSI = boros 5–10%</li>
+              <li><b>Pertalite (RON 90)</b> sudah cukup untuk MZR 1.5L, tidak perlu Pertamax Turbo</li>
+              <li><b>Antisipasi lampu merah</b> — lepas gas lebih awal, jangan ngebut lalu rem mendadak</li>
+              <li><b>Jaga RPM 2.000–2.500</b> saat cruise — sweet spot mesin MZR</li>
+              <li><b>Full-to-full method</b> untuk ukur konsumsi — lebih akurat dari MID</li>
+              <li><b>Hindari bawa barang berlebih</b> di bagasi — bobot = BBM</li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-xl border border-line p-4">
+            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-ink mb-3">
+              🔧 Info Servis
+            </h3>
+            <ul className="space-y-2 text-sm text-muted list-disc list-inside">
+              <li><b>Serpentine belt:</b> kode <b>6PK1840</b>, merek Bando/Ori ~Rp 150–260rb</li>
+              <li><b>Bearing tensioner:</b> SKF, ~Rp 60rb/pcs</li>
+              <li><b>Bearing magnet clutch AC:</b> NSK, ~Rp 95rb</li>
+              <li><b>Beli part sendiri di Shopee</b> — bengkel = jasa pasang saja (hemat 30–50%)</li>
+              <li><b>Grup Facebook:</b> "Mazda 2 Non Skyactiv" + "M2Unity" — banyak tips & bengkel rekomendasi</li>
+            </ul>
+          </div>
+
+          <p className="text-xs text-dim text-center pt-1">
+            Sumber: kakak (inspektor) + pengalaman owner 310rb km + komunitas M2Unity
+          </p>
         </div>
       )}
     </div>
