@@ -172,7 +172,7 @@ export default function App() {
 
   // ---- status jatuh tempo per katalog ----
   const today = todayStr();
-  const dueList = CATALOG.filter((c) => c.id !== "other").map((c) => {
+  const dueList = CATALOG.filter((c) => c.id !== "other" && c.id !== "engineflush").map((c) => {
     const last = entries
       .filter((e) => e.type === c.id)
       .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
@@ -348,7 +348,7 @@ export default function App() {
                 onChange={(e) => setForm({ ...form, type: e.target.value })}
                 className="w-full mt-1 border border-line rounded-lg px-3 py-2 text-sm outline-none focus:border-ink bg-white"
               >
-                {CATALOG.map((c) => (
+                {CATALOG.filter((c) => c.id !== "engineflush").map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.label}
                   </option>
