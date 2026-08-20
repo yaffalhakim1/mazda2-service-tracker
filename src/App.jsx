@@ -18,6 +18,15 @@ export default function App() {
   });
   const [error, setError] = useState("");
   const [selected, setSelected] = useState(null); // modal state
+  const [closing, setClosing] = useState(false); // for exit animation
+
+  const closeModal = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setSelected(null);
+      setClosing(false);
+    }, 150);
+  };
 
   // ---- load: terapkan hanya entry seed yang lebih baru dari load terakhir ----
   useEffect(() => {
@@ -590,11 +599,11 @@ export default function App() {
       {/* MODAL */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-ink/40 p-4"
-          onClick={() => setSelected(null)}
+          className={`fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-ink/40 p-4 modal-overlay ${closing ? "closing" : ""}`}
+          onClick={closeModal}
         >
           <div
-            className="bg-white rounded-2xl shadow-xl w-full max-w-md p-5 space-y-3 animate-in slide-in-from-bottom"
+            className={`bg-white rounded-2xl shadow-xl w-full max-w-md p-5 space-y-3 modal-content ${closing ? "closing" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-3">
@@ -603,7 +612,7 @@ export default function App() {
               </h3>
               <button
                 type="button"
-                onClick={() => setSelected(null)}
+                onClick={closeModal}
                 className="text-dim hover:text-ink text-lg leading-none px-1"
               >
                 ✕
@@ -640,8 +649,8 @@ export default function App() {
 
             <button
               type="button"
-              onClick={() => setSelected(null)}
-              className="w-full bg-ink text-paper rounded-xl py-2.5 text-sm font-medium mt-2"
+              onClick={closeModal}
+              className="w-full bg-ink text-paper rounded-xl py-2.5 text-sm font-medium mt-2 active:scale-[0.98] transition-transform"
             >
               Tutup
             </button>
