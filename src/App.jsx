@@ -569,15 +569,103 @@ export default function App() {
 
           <div className="bg-white rounded-xl border border-line p-4">
             <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-ink mb-3">
-              🔧 Info Servis
+              🔧 Info Parts & Harga
             </h3>
-            <ul className="space-y-2 text-sm text-muted list-disc list-inside">
-              <li><b>Serpentine belt:</b> kode <b>6PK1840</b>, merek Bando/Ori ~Rp 150–260rb</li>
-              <li><b>Bearing tensioner:</b> SKF, ~Rp 60rb/pcs</li>
-              <li><b>Bearing magnet clutch AC:</b> NSK, ~Rp 95rb</li>
-              <li><b>Beli part sendiri di Shopee</b> — bengkel = jasa pasang saja (hemat 30–50%)</li>
-              <li><b>Grup Facebook:</b> "Mazda 2 Non Skyactiv" + "M2Unity" — banyak tips & bengkel rekomendasi</li>
-            </ul>
+            <div className="space-y-3 text-sm text-muted">
+              {/* Oli Mesin */}
+              <div>
+                <div className="font-medium text-ink mb-1">🛢️ Oli Mesin (5W-30, 3.5L)</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>Fastron Eco 5W-30</b> — Rp 97rb/L, Rp 302rb/3.5L (yang sudah dipakai)</div>
+                  <div><b>Fastron Gold 5W-30</b> — Rp 149rb/L, Rp 680rb/4L (full synthetic, lebih bagus)</div>
+                  <div><b>Idemitsu IFG3 5W-30</b> — Rp 122rb/L (Japan, API SP/GF-6)</div>
+                  <div><b>Shell Helix HX7 5W-30</b> — Rp 100rb/L (populer, mudah didapat)</div>
+                  <div><b>Castrol Magnatec 5W-30</b> — Rp 102rb/L (cocok untuk macet)</div>
+                </div>
+              </div>
+
+              {/* Filter Oli */}
+              <div>
+                <div className="font-medium text-ink mb-1">🔧 Filter Oli</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>Original Mazda</b> — Rp 64rb (Shopee: Asiang Ho Ho)</div>
+                  <div><b>Aftermarket</b> — Rp 30–50rb (cek toko oren, cari "filter oli Mazda 2 non sky")</div>
+                </div>
+              </div>
+
+              {/* Busi */}
+              <div>
+                <div className="font-medium text-ink mb-1">⚡ Busi (4 pcs)</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>NGK Laser Iridium</b> — Rp 80–100rb/pcs (recommended OEM)</div>
+                  <div><b>Denso Iridium Power</b> — Rp 90–120rb/pcs (Japan, tahan lama)</div>
+                  <div><b>NGK Standard</b> — Rp 30–40rb/pcs (budget, ganti lebih sering)</div>
+                  <div className="text-dim mt-1">⚠️ Jangan pakai busi racing iridium kecuali ada alasan khusus</div>
+                </div>
+              </div>
+
+              {/* Filter Udara */}
+              <div>
+                <div className="font-medium text-ink mb-1">🌬️ Filter Udara</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>Original Mazda</b> — Rp 80–120rb</div>
+                  <div><b>FERROX Stainless</b> — Rp 150–200rb (bisa dicuci, awet)</div>
+                  <div><b>Aftermarket</b> — Rp 40–60rb (ganti tiap 15rb km)</div>
+                </div>
+              </div>
+
+              {/* Filter AC */}
+              <div>
+                <div className="font-medium text-ink mb-1">❄️ Filter AC</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>Original Mazda</b> — Rp 50–80rb</div>
+                  <div><b>Aftermarket</b> — Rp 30–50rb (ganti tiap 10rb km / 1 th)</div>
+                </div>
+              </div>
+
+              {/* Oli Matic */}
+              <div>
+                <div className="font-medium text-ink mb-1">⚙️ Oli Matic (ATF)</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>Mazda ATF FZ (Original)</b> — Rp 100–130rb/L (recommended)</div>
+                  <div><b>Prestone ATF MV Synthetic</b> — Rp 118rb/L (compatible, populer)</div>
+                  <div><b>Dexron-VI ATF</b> — Rp 102rb/L (generic, bisa dipakai)</div>
+                  <div className="text-dim mt-1">⚠️ Volume: ~3.5L untuk drain & refill. Filter matic: Rp 200–400rb</div>
+                </div>
+              </div>
+
+              {/* Serpentine Belt */}
+              <div>
+                <div className="font-medium text-ink mb-1">🔗 Serpentine Belt</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>Kode:</b> <b>6PK1840</b> (6 rib, 1840mm)</div>
+                  <div><b>Original Mazda</b> — Rp 260rb (Made in Japan)</div>
+                  <div><b>Bando</b> — Rp 100–150rb (recommended aftermarket)</div>
+                  <div><b>Continental</b> — Rp 120–180rb</div>
+                  <div><b>ACDelco</b> — Rp 80–120rb</div>
+                </div>
+              </div>
+
+              {/* Bearing */}
+              <div>
+                <div className="font-medium text-ink mb-1">🔩 Bearing</div>
+                <div className="bg-paper rounded-lg p-2 space-y-1 text-xs">
+                  <div><b>Bearing tensioner (2 pcs):</b> SKF, ~Rp 60rb/pcs</div>
+                  <div><b>Bearing magnet clutch AC:</b> NSK, ~Rp 95rb</div>
+                </div>
+              </div>
+
+              {/* Tips */}
+              <div className="pt-2 border-t border-line">
+                <div className="font-medium text-ink mb-1">💡 Tips Belanja Part</div>
+                <ul className="space-y-1 text-xs list-disc list-inside">
+                  <li><b>Beli part sendiri di Shopee/Tokopedia</b> — bengkel = jasa pasang saja</li>
+                  <li><b>Harga bengkel = 2x lipat</b> dari harga online (data dari komunitas)</li>
+                  <li><b>Cek "Mazda 2 Non Skyactiv"</b> di FB — banyak link Shopee rekomendasi</li>
+                  <li><b>M2Unity group</b> — info bengkel spesialis + tips DIY</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div className="bg-white rounded-xl border border-accent/30 bg-accent/5 p-4">
