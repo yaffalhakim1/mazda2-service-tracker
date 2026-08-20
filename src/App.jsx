@@ -568,6 +568,16 @@ export default function App() {
             </ul>
           </div>
 
+          <div className="bg-white rounded-xl border border-accent/30 bg-accent/5 p-4">
+            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-accent mb-2">
+              ⚠️ Catatan Inspektor
+            </h3>
+            <ul className="space-y-2 text-sm text-muted list-disc list-inside">
+              <li><b>Engine flush TIDAK direkomendasikan</b> — mesin masih bersih, dampaknya bikin karet sealer getas. Cukup ganti oli rutin 5rb km / 6 bln.</li>
+              <li><b>Oli matic belum pernah ganti</b> — rencana ganti bareng oli mesin berikutnya (~Jan 2027 / km 87.206)</li>
+            </ul>
+          </div>
+
           <p className="text-xs text-dim text-center pt-1">
             Sumber: kakak (inspektor) + pengalaman owner 310rb km + komunitas M2Unity
           </p>

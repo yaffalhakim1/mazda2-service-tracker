@@ -5,7 +5,7 @@ export const CATALOG = [
   { id: "oli", label: "Ganti oli mesin + filter oli", km: 5000, months: 6 },
   { id: "throttle", label: "Tune up / carbon cleaning / throttle body", km: 20000, months: null },
   { id: "filter", label: "Ganti filter udara", km: 15000, months: 12 },
-  { id: "engineflush", label: "Engine flush", km: 20000, months: null },
+  { id: "engineflush", label: "Engine flush", km: null, months: null, note: "TIDAK direkomendasikan — bikin karet sealer getas. Cukup ganti oli rutin." },
   { id: "injector", label: "Injector cleaning", km: 35000, months: null },
   { id: "busi", label: "Ganti busi", km: 50000, months: null },
   { id: "filterac", label: "Ganti filter AC", km: 10000, months: 12 },
