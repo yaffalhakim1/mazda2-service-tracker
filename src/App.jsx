@@ -17,6 +17,7 @@ export default function App() {
     notes: "",
   });
   const [error, setError] = useState("");
+  const [selected, setSelected] = useState(null); // modal state
 
   // ---- load: terapkan hanya entry seed yang lebih baru dari load terakhir ----
   useEffect(() => {
@@ -317,7 +318,8 @@ export default function App() {
           {sortedDue.map((d) => (
             <div
               key={d.id}
-              className="bg-white rounded-xl border border-line px-4 py-3 flex items-center justify-between gap-3"
+              onClick={() => setSelected({ type: "due", data: d })}
+              className="bg-white rounded-xl border border-line px-4 py-3 flex items-center justify-between gap-3 active:bg-line/30 cursor-pointer"
             >
               <div className="min-w-0">
                 <div className="font-medium text-[15px] truncate">{d.label}</div>
@@ -456,7 +458,8 @@ export default function App() {
             return (
               <div
                 key={e.id}
-                className="bg-white rounded-xl border border-line border-dashed px-4 py-3 relative"
+                onClick={() => setSelected({ type: "history", data: { ...e, label } })}
+                className="bg-white rounded-xl border border-line border-dashed px-4 py-3 relative active:bg-line/30 cursor-pointer"
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
@@ -581,6 +584,68 @@ export default function App() {
           <p className="text-xs text-dim text-center pt-1">
             Sumber: kakak (inspektor) + pengalaman owner 310rb km + komunitas M2Unity
           </p>
+        </div>
+      )}
+
+      {/* MODAL */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-ink/40 p-4"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-xl w-full max-w-md p-5 space-y-3 animate-in slide-in-from-bottom"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="font-display text-base font-semibold text-ink">
+                {selected.type === "due" ? selected.data.label : selected.data.label}
+              </h3>
+              <button
+                type="button"
+                onClick={() => setSelected(null)}
+                className="text-dim hover:text-ink text-lg leading-none px-1"
+              >
+                ✕
+              </button>
+            </div>
+
+            {selected.type === "due" && (
+              <div className="space-y-2 text-sm text-muted">
+                <div className="flex items-center gap-2">
+                  <span className={`inline-block border-2 rounded-md px-2 py-0.5 text-[11px] font-bold tracking-wider font-display ${stampStyle[selected.data.status]}`}>
+                    {stampWord[selected.data.status]}
+                  </span>
+                  <span className="text-xs text-dim">Status saat ini</span>
+                </div>
+                <div className="bg-paper rounded-lg p-3 space-y-1">
+                  <div><b>Terakhir servis:</b> {selected.data.last ? `${fmtDate(selected.data.last.date)} • ${selected.data.last.km.toLocaleString("id-ID")} km` : "Belum ada catatan"}</div>
+                  {selected.data.km && <div><b>Interval km:</b> setiap {selected.data.km.toLocaleString("id-ID")} km</div>}
+                  {selected.data.months && <div><b>Interval waktu:</b> setiap {selected.data.months} bulan</div>}
+                  <div className="pt-1 border-t border-line"><b>Sekarang:</b> {selected.data.detail}</div>
+                </div>
+              </div>
+            )}
+
+            {selected.type === "history" && (
+              <div className="space-y-2 text-sm text-muted">
+                <div className="bg-paper rounded-lg p-3 space-y-1">
+                  <div><b>Tanggal:</b> {fmtDate(selected.data.date)}</div>
+                  <div><b>Kilometer:</b> {(selected.data.km ?? 0).toLocaleString("id-ID")} km</div>
+                  <div><b>Biaya:</b> <span className="font-mono">{fmtIDR(selected.data.cost)}</span></div>
+                  {selected.data.notes && <div><b>Catatan:</b> {selected.data.notes}</div>}
+                </div>
+              </div>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setSelected(null)}
+              className="w-full bg-ink text-paper rounded-xl py-2.5 text-sm font-medium mt-2"
+            >
+              Tutup
+            </button>
+          </div>
         </div>
       )}
     </div>
