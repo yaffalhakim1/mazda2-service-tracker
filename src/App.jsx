@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Wrench, Plus, Gauge, Calendar, Banknote, Trash2, Stamp, Loader2 } from "lucide-react";
+import { Wrench, Plus, Gauge, Calendar, Banknote, Trash2, Stamp, Loader2, Download } from "lucide-react";
 import { CATALOG, SEED_ENTRIES, SEED_VERSION, SEED_CAR_KM } from "./data.js";
 import { todayStr, fmtIDR, fmtDate, monthsBetween, uid } from "./utils.js";
 
@@ -137,6 +137,37 @@ export default function App() {
 
   const deleteEntry = async (id) => {
     await persistEntries(entries.filter((e) => e.id !== id));
+  };
+
+  // ---- export functions ----
+  const exportJSON = () => {
+    const data = { car, entries, exportedAt: new Date().toISOString() };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `mazda2-servis-${todayStr()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const exportCSV = () => {
+    const header = "Tanggal,Jenis,KM,Biaya,Catatan";
+    const rows = entries.map((e) => {
+      const label = CATALOG.find((c) => c.id === e.type)?.label || e.type;
+      const cost = (e.cost || 0).toLocaleString("id-ID");
+      const notes = (e.notes || "").replace(/"/g, '""');
+      return `"${e.date}","${label}",${e.km},${cost},"${notes}"`;
+    });
+    const csv = [header, ...rows].join("\n");
+    const bom = "\uFEFF"; // UTF-8 BOM for Excel
+    const blob = new Blob([bom + csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `mazda2-servis-${todayStr()}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   // ---- status jatuh tempo per katalog ----
@@ -400,6 +431,24 @@ export default function App() {
           {entries.length === 0 && (
             <div className="text-center text-sm text-dim py-10">
               Belum ada riwayat servis. Tambahkan dari tab "Tambah".
+            </div>
+          )}
+          {entries.length > 0 && (
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={exportJSON}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white border border-line text-muted hover:text-ink hover:border-ink/30 transition-colors"
+              >
+                <Download size={13} /> JSON
+              </button>
+              <button
+                type="button"
+                onClick={exportCSV}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-white border border-line text-muted hover:text-ink hover:border-ink/30 transition-colors"
+              >
+                <Download size={13} /> CSV
+              </button>
             </div>
           )}
           {entries.map((e) => {
