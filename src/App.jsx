@@ -692,6 +692,12 @@ export default function App() {
                 </div>
               </div>
               <div className="bg-paper rounded-lg p-2">
+                <div className="font-medium text-ink">Tulus Onderstel</div>
+                <div>📍 Semarang • 🔧 Kaki-kaki & suspensi</div>
+                <div className="text-dim mb-1">⭐ Review Maps bagus</div>
+                <a href="https://maps.app.goo.gl/byvx6vAFfSbt8Pyd8" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
+              </div>
+              <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Beres Jl. Siliwangi</div>
                 <div>📍 Jl. Siliwangi • 🔧 Bengkel resmi Mazda (authorized)</div>
                 <div className="text-dim">⚠️ Lebih mahal, tapi ada garansi & parts original</div>
