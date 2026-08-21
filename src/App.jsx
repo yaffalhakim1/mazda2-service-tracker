@@ -676,22 +676,17 @@ export default function App() {
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Nur Bengkel ⭐4.8</div>
                 <div>📍 Jl. Dewi Sartika No.80, Sukorejo, Gn. Pati • 🔧 Umum</div>
-                <a href="https://wa.me/628980408080" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
+                <div className="flex gap-3 mt-1">
+                  <a href="https://wa.me/628980408080" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
+                  <a href="https://share.google/aZ1Uj6o6m2mvKAYem" target="_blank" rel="noopener" className="text-accent underline">🗺️ Maps</a>
+                </div>
               </div>
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Nugroho Metic ⭐4.7</div>
                 <div>📍 Cakrawala Tengah III No.20, Tawangsari, Semarang Barat • 🔧 Spesialis matic</div>
                 <div className="flex gap-3 mt-1">
                   <a href="https://wa.me/6281222700025" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
-                  <a href="https://bengkelmobilsemarang.id" target="_blank" rel="noopener" className="text-accent underline">🌐 Website</a>
-                </div>
-              </div>
-              <div className="bg-paper rounded-lg p-2">
-                <div className="font-medium text-ink">Bengkel Kaki Onderstel</div>
-                <div>📍 Kota Semarang • 🔧 Kaki-kaki & suspensi</div>
-                <div className="flex gap-3 mt-1">
-                  <a href="https://wa.me/62882008584325" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
-                  <a href="https://www.google.com/maps/search/?api=1&query=Bengkel+Kaki+Onderstel+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
+                  <a href="https://share.google/nh382O2CEUBJe7Snq" target="_blank" rel="noopener" className="text-accent underline">🗺️ Maps</a>
                 </div>
               </div>
               <div className="bg-paper rounded-lg p-2">
