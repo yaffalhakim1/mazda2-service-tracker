@@ -674,14 +674,17 @@ export default function App() {
             </h3>
             <div className="space-y-2 text-xs text-muted">
               <div className="bg-paper rounded-lg p-2">
-                <div className="font-medium text-ink">Nur Bengkel</div>
-                <div>📍 Sampangan • 🔧 Umum (service rutin, oli, filter)</div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Nur+Bengkel+Sampangan+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
+                <div className="font-medium text-ink">Nur Bengkel ⭐4.8</div>
+                <div>📍 Jl. Dewi Sartika No.80, Sukorejo, Gn. Pati • 🔧 Umum</div>
+                <a href="https://wa.me/628980408080" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
               </div>
               <div className="bg-paper rounded-lg p-2">
-                <div className="font-medium text-ink">Nugroho Metic</div>
-                <div>📍 Cakrawala (Arteri Yos Sudarso) • 🔧 Spesialis matic + tune up</div>
-                <a href="https://www.google.com/maps/search/?api=1&query=Nugroho+Metic+Cakrawala+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
+                <div className="font-medium text-ink">Nugroho Metic ⭐4.7</div>
+                <div>📍 Cakrawala Tengah III No.20, Tawangsari, Semarang Barat • 🔧 Spesialis matic</div>
+                <div className="flex gap-3 mt-1">
+                  <a href="https://wa.me/6281222700025" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
+                  <a href="https://bengkelmobilsemarang.id" target="_blank" rel="noopener" className="text-accent underline">🌐 Website</a>
+                </div>
               </div>
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Bengkel Kaki Onderstel</div>
@@ -692,21 +695,18 @@ export default function App() {
                 </div>
               </div>
               <div className="bg-paper rounded-lg p-2">
-                <div className="font-medium text-ink">Tulus Onderstel</div>
-                <div>📍 Semarang • 🔧 Kaki-kaki & suspensi</div>
-                <div className="text-dim mb-1">⭐ Review Maps bagus</div>
-                <a href="https://maps.app.goo.gl/byvx6vAFfSbt8Pyd8" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
+                <div className="font-medium text-ink">Tulus Onderstel ⭐5.0</div>
+                <div>📍 Jl. Pedurungan Tengah 12 No.32 • 🔧 Kaki-kaki & shockbreaker</div>
+                <div className="flex gap-3 mt-1">
+                  <a href="https://wa.me/6281335291388" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
+                  <a href="https://maps.app.goo.gl/byvx6vAFfSbt8Pyd8" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
+                </div>
               </div>
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Beres Jl. Siliwangi</div>
                 <div>📍 Jl. Siliwangi • 🔧 Bengkel resmi Mazda (authorized)</div>
                 <div className="text-dim">⚠️ Lebih mahal, tapi ada garansi & parts original</div>
                 <a href="https://www.google.com/maps/search/?api=1&query=Bengkel+Resmi+Mazda+Siliwangi+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
-              </div>
-              <div className="bg-paper rounded-lg p-2">
-                <div className="font-medium text-ink">Araka AutoService</div>
-                <div>📍 Home service (datang ke rumah)</div>
-                <a href="https://wa.me/6289605380973" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
               </div>
               <div className="pt-1 text-dim">
                 💡 Grup FB: <b>Komunitas Mazda Semarang</b> (6.8K members) — tanya bengkel terbaru
