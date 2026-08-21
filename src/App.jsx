@@ -670,6 +670,40 @@ export default function App() {
 
           <div className="bg-white rounded-xl border border-accent/30 bg-accent/5 p-4">
             <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-accent mb-2">
+              📍 Bengkel Rekomendasi — Semarang
+            </h3>
+            <div className="space-y-2 text-xs text-muted">
+              <div className="bg-paper rounded-lg p-2">
+                <div className="font-medium text-ink">Nur Bengkel</div>
+                <div>📍 Sampangan • 🔧 Umum (service rutin, oli, filter)</div>
+              </div>
+              <div className="bg-paper rounded-lg p-2">
+                <div className="font-medium text-ink">Nugroho Metic</div>
+                <div>📍 Cakrawala • 🔧 Spesialis matic + tune up</div>
+              </div>
+              <div className="bg-paper rounded-lg p-2">
+                <div className="font-medium text-ink">Bengkel Kaki Onderstel</div>
+                <div>📍 Kota Semarang • 🔧 Kaki-kaki & suspensi</div>
+                <div>📱 WA: 0882008584325</div>
+              </div>
+              <div className="bg-paper rounded-lg p-2">
+                <div className="font-medium text-ink">Beres Jl. Siliwangi</div>
+                <div>📍 Jl. Siliwangi • 🔧 Bengkel resmi Mazda (authorized)</div>
+                <div className="text-dim">⚠️ Lebih mahal, tapi ada garansi & parts original</div>
+              </div>
+              <div className="bg-paper rounded-lg p-2">
+                <div className="font-medium text-ink">Araka AutoService</div>
+                <div>📍 Home service (datang ke rumah)</div>
+                <div>📱 WA: 089605380973</div>
+              </div>
+              <div className="pt-1 text-dim">
+                💡 Grup FB: <b>Komunitas Mazda Semarang</b> (6.8K members) — tanya bengkel terbaru
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl border border-accent/30 bg-accent/5 p-4">
+            <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-accent mb-2">
               ⚠️ Catatan Inspektor
             </h3>
             <ul className="space-y-2 text-sm text-muted list-disc list-inside">
