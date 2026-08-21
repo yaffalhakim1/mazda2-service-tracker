@@ -676,25 +676,31 @@ export default function App() {
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Nur Bengkel</div>
                 <div>📍 Sampangan • 🔧 Umum (service rutin, oli, filter)</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Nur+Bengkel+Sampangan+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
               </div>
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Nugroho Metic</div>
-                <div>📍 Cakrawala • 🔧 Spesialis matic + tune up</div>
+                <div>📍 Cakrawala (Arteri Yos Sudarso) • 🔧 Spesialis matic + tune up</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Nugroho+Metic+Cakrawala+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
               </div>
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Bengkel Kaki Onderstel</div>
                 <div>📍 Kota Semarang • 🔧 Kaki-kaki & suspensi</div>
-                <div>📱 WA: 0882008584325</div>
+                <div className="flex gap-3 mt-1">
+                  <a href="https://wa.me/62882008584325" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
+                  <a href="https://www.google.com/maps/search/?api=1&query=Bengkel+Kaki+Onderstel+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
+                </div>
               </div>
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Beres Jl. Siliwangi</div>
                 <div>📍 Jl. Siliwangi • 🔧 Bengkel resmi Mazda (authorized)</div>
                 <div className="text-dim">⚠️ Lebih mahal, tapi ada garansi & parts original</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Bengkel+Resmi+Mazda+Siliwangi+Semarang" target="_blank" rel="noopener" className="text-accent underline">🗺️ Buka di Maps</a>
               </div>
               <div className="bg-paper rounded-lg p-2">
                 <div className="font-medium text-ink">Araka AutoService</div>
                 <div>📍 Home service (datang ke rumah)</div>
-                <div>📱 WA: 089605380973</div>
+                <a href="https://wa.me/6289605380973" target="_blank" rel="noopener" className="text-accent underline">💬 WhatsApp</a>
               </div>
               <div className="pt-1 text-dim">
                 💡 Grup FB: <b>Komunitas Mazda Semarang</b> (6.8K members) — tanya bengkel terbaru
