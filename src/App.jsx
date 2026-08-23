@@ -19,6 +19,15 @@ export default function App() {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState(null); // modal state
   const [closing, setClosing] = useState(false); // for exit animation
+  const [odoDraft, setOdoDraft] = useState(0);
+
+  const saveOdo = () => {
+    if (Number.isFinite(odoDraft) && odoDraft > 0 && odoDraft !== car.km) {
+      const updated = { ...car, km: odoDraft };
+      setCar(updated);
+      persistCar(updated);
+    }
+  };
 
   const closeModal = () => {
     setClosing(true);
@@ -91,6 +100,7 @@ export default function App() {
       }
 
       setCar(loadedCar);
+      setOdoDraft(loadedCar.km);
       setEntries(loadedEntries);
       setReady(true);
     })();
@@ -268,23 +278,27 @@ export default function App() {
             id="odo"
             type="number"
             min="0"
-            value={car.km || ""}
+            value={odoDraft}
             onChange={(e) => {
               const n = Number(e.target.value);
-              setCar({ ...car, km: Number.isFinite(n) ? n : car.km });
+              setOdoDraft(Number.isFinite(n) ? n : odoDraft);
             }}
-            onBlur={(e) => {
-              const n = Number(e.target.value);
-              if (Number.isFinite(n) && n > 0 && n !== car.km) {
-                const updated = { ...car, km: n };
-                setCar(updated);
-                persistCar(updated);
-              }
+            onKeyDown={(e) => {
+              if (e.key === "Enter") saveOdo();
             }}
             placeholder="Odometer sekarang"
             className="bg-transparent border-b border-deep focus:border-accent outline-none text-sm py-1 w-40 font-mono"
           />
-          <span className="text-xs text-dim">update km terkini</span>
+          {odoDraft !== car.km && odoDraft > 0 && (
+            <button
+              type="button"
+              onClick={saveOdo}
+              className="text-xs bg-accent text-white rounded-md px-2 py-1 font-medium active:scale-95 transition-transform"
+            >
+              Simpan
+            </button>
+          )}
+          <span className="text-xs text-dim">km</span>
         </div>
       </div>
 
