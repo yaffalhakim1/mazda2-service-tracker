@@ -273,8 +273,13 @@ export default function App() {
               const n = Number(e.target.value);
               setCar({ ...car, km: Number.isFinite(n) ? n : car.km });
             }}
-            onBlur={() => {
-              if (car.km > 0) persistCar(car); // jangan simpan 0/kosong (data-loss)
+            onBlur={(e) => {
+              const n = Number(e.target.value);
+              if (Number.isFinite(n) && n > 0 && n !== car.km) {
+                const updated = { ...car, km: n };
+                setCar(updated);
+                persistCar(updated);
+              }
             }}
             placeholder="Odometer sekarang"
             className="bg-transparent border-b border-deep focus:border-accent outline-none text-sm py-1 w-40 font-mono"
