@@ -32,7 +32,7 @@ export const CATALOG = [
 // Aplikasi hanya menerapkan entry dengan `v` yang lebih baru dari
 // yang sudah pernah dilihat user — edit/hapus manual user tidak akan
 // ditimpa oleh seed lama.
-export const SEED_VERSION = 16;
+export const SEED_VERSION = 17;
 export const SEED_ENTRIES = [
   { v: 1, id: "seed-oli-0719", type: "oli", date: "2026-07-19", km: 82206, cost: 407000, notes: "Fastron Eco SAE 5W-30 + filter oli (Pertamina). Ganti oli berikutnya di km 87.206" },
   { v: 1, id: "seed-aki-0719", type: "aki", date: "2026-07-19", km: 82296, cost: 830000, notes: "Ganti aki" },
