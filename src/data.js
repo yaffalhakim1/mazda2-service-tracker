@@ -49,4 +49,4 @@ export const SEED_ENTRIES = [
   { v: 12, id: "seed-filter-0717", type: "filter", date: "2026-07-17", km: 82206, cost: 0, notes: "Ganti filter udara (km perkiraan ~82.2rb, biaya belum dicatat)" },
   { v: 13, id: "seed-filterac-0717", type: "filterac", date: "2026-07-17", km: 82206, cost: 0, notes: "Ganti filter AC (km perkiraan ~82.2rb, biaya belum dicatat)" },
 ];
-export const SEED_CAR_KM = 83049;
+export const SEED_CAR_KM = 83333;
